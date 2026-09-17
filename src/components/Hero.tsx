@@ -14,9 +14,9 @@ export default function Hero() {
 
       <div className={styles.copy}>
         <div className={styles.clip}>
-          <div className={`${styles.rise} ${styles.kicker}`}>{profile.role}</div>
+          <div className={`${styles.rise} ${styles.kicker}`} data-hero-copy>{profile.role}</div>
         </div>
-        <h1 className={styles.title}>
+        <h1 className={styles.title} data-hero-copy>
           <span className={styles.clip}>
             <span className={styles.rise} style={{ transitionDelay: "110ms" }}>Nikola</span>
           </span>
@@ -25,7 +25,7 @@ export default function Hero() {
           </span>
         </h1>
         <div className={styles.clip}>
-          <p className={`${styles.rise} ${styles.lead}`} style={{ transitionDelay: "330ms" }}>
+          <p className={`${styles.rise} ${styles.lead}`} data-hero-copy style={{ transitionDelay: "330ms" }}>
             Five years shipping production software. The last one inside a{" "}
             <em>Swiss digital bank</em>, building LLM tooling that people actually use.
           </p>

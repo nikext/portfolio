@@ -1,0 +1,98 @@
+.host {
+  position: absolute;
+  inset: 0;
+}
+
+.tip {
+  position: absolute;
+  transform: translate(16px, -50%);
+  pointer-events: none;
+  background: rgba(28, 31, 35, 0.94);
+  border: 1px solid var(--line-2);
+  border-left: 2px solid var(--accent);
+  padding: 10px 14px;
+  max-width: 250px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.kind {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.tipName {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.card {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(16px, 5vh, 64px);
+  transform: translateX(-50%);
+  z-index: 70;
+  width: min(520px, calc(100vw - 32px));
+  background: rgba(24, 27, 30, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-2);
+  padding: clamp(16px, 2.2vw, 22px);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+}
+
+.bar {
+  flex: none;
+  width: 2px;
+  align-self: stretch;
+  background: var(--accent);
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardKind {
+  composes: kind;
+  letter-spacing: 0.18em;
+  margin-bottom: 7px;
+}
+
+.cardName {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+
+.esc {
+  flex: none;
+  background: none;
+  border: 1px solid var(--line-2);
+  color: var(--mute);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.esc:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
