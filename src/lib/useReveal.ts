@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /**
- * Flips every [data-reveal] element to .is-in once it scrolls into view,
+ * Marks every [data-reveal] element with data-in once it scrolls into view,
  * and fills any [data-bar] child to its target width. A safety timer makes
  * sure nothing stays hidden if the observer never fires.
  */
@@ -11,7 +11,7 @@ export function useReveal() {
   useEffect(() => {
     const els = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     const show = (el: HTMLElement) => {
-      el.classList.add("is-in");
+      el.setAttribute("data-in", "");
       el.querySelectorAll<HTMLElement>("[data-bar]").forEach((b) => {
         b.style.width = b.dataset.bar ?? "0";
       });

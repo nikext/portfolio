@@ -107,7 +107,7 @@ button {
     transform 0.9s var(--ease-out);
 }
 
-[data-reveal].is-in {
+[data-reveal][data-in] {
   opacity: 1;
   transform: translateY(0);
 }
