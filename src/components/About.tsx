@@ -16,9 +16,12 @@ export default function About() {
         <div data-reveal className={styles.aside}>
           <Portrait />
           <div className={styles.caption}>
-            Currently: {profile.currently[0]},
-            <br />
-            {profile.currently[1]}
+            <div className={styles.captionLabel}>{profile.focus.label}</div>
+            <ul className={styles.focus}>
+              {profile.focus.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

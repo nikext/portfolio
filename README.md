@@ -18,6 +18,7 @@ npm run build    # static site in ./out
 | Roles / experience | `src/data/roles.ts` |
 | Stack chips | `src/data/stack.ts` |
 | Hero graph nodes | `src/data/nodes.ts` |
+| Hero scene (three.js, GPU particles, bloom) | `src/components/Scene.tsx` + `src/components/scene/shaders.ts` |
 | Colours, type, spacing tokens | `src/app/globals.css` (`--accent` drives every orange) |
 | Sections | `src/components/*` |
 

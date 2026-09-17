@@ -6,13 +6,21 @@ export const profile = {
     "Five years shipping production software. The last one inside a Swiss digital bank, building LLM tooling that people actually use.",
   location: "Zurich, Switzerland",
   timeZone: "Europe/Zurich",
-  status: "Permit B · EU citizenship",
-  uptime: "99.9% uptime sustained",
+  /** Live-dot status line in the hero corner. */
+  signal: "Building AI tooling in production",
   email: "nikolatod42@gmail.com",
   /** Path under /public. Leave empty to show the placeholder tile. */
   portrait: "/portrait.jpg",
   portraitAlt: "Portrait of Nikola Todorovski",
-  currently: ["German A1 → A2", "MCP servers for internal tooling."],
+  /** Shown under the portrait. */
+  focus: {
+    label: "Now building",
+    items: [
+      "Agentic workflows on Claude + MCP",
+      "LLM tooling that ships to production",
+      "Automation that removes manual work",
+    ],
+  },
   openTo: "Open to AI engineering roles in Switzerland.",
   links: {
     github: "https://github.com/nikext",

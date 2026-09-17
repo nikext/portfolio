@@ -37,13 +37,12 @@ export default function Hero() {
         <div>
           <Clock />
         </div>
-        <div>{profile.status}</div>
       </div>
 
       <div className={`${styles.corner} ${styles.right}`}>
         <div className={styles.live}>
           <span className={styles.dot} />
-          <span className={styles.strong}>{profile.uptime}</span>
+          <span className={styles.strong}>{profile.signal}</span>
         </div>
         <div data-scene-hint>drag to orbit · click a node</div>
       </div>
