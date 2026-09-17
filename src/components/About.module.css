@@ -35,11 +35,13 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  max-width: 300px;
+  justify-self: end;
 }
 
 .frame {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   width: 100%;
   max-width: 100%;
   border: 1px solid var(--line-2);
@@ -90,12 +92,14 @@
   color: var(--mute);
 }
 
-/* portrait phones: photo above copy, shorter frame so it doesn't dominate */
+/* portrait phones: photo above copy, kept small so it doesn't dominate */
 @media (max-width: 640px) {
   .aside {
     order: -1;
+    max-width: none;
+    justify-self: stretch;
   }
   .frame {
-    aspect-ratio: 4 / 4.4;
+    max-width: 200px;
   }
 }
