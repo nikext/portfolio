@@ -1,0 +1,12 @@
+// Cloudflare Workers: this site is a Next.js static export, so the Worker only
+// serves the files in ./out (no server code, no OpenNext). Build with
+// `npm run build`, deploy with `npx wrangler deploy`. The `name` must match
+// the Worker's name in the Cloudflare dashboard.
+{
+  "name": "portfolio",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}

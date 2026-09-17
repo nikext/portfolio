@@ -26,15 +26,18 @@ npm run build    # static site in ./out
 
 Drop a photo at `public/portrait.jpg` (4:5 works best). Until it exists the About section shows a hatched placeholder.
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare
 
-Connect the GitHub repo in the Cloudflare dashboard with:
+The site is a static export, so it deploys as an assets-only Worker: `wrangler.jsonc` points Wrangler at `./out` and there is no server code. Without that file Wrangler's auto-config would route the build through OpenNext, which fails on a static export.
+
+Workers Builds settings for the connected GitHub repo:
 
 | Setting | Value |
 | --- | --- |
-| Framework preset | Next.js (Static HTML Export) |
 | Build command | `npm run build` |
-| Build output directory | `out` |
+| Deploy command | `npx wrangler deploy` |
 | Node version | `22` (read from `.node-version`) |
 
-Every push to `main` deploys; other branches get preview URLs.
+The `name` in `wrangler.jsonc` must match the Worker's name in the dashboard. Every push to `main` deploys; other branches get preview URLs.
+
+Cloudflare Pages works too: preset "Next.js (Static HTML Export)", build command `npm run build`, output directory `out`.
