@@ -1,10 +1,19 @@
-import { profile } from "@/data/profile";
+import Cursor from "@/components/Cursor";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Loader from "@/components/Loader";
+import Progress from "@/components/Progress";
 
 export default function Home() {
   return (
-    <main style={{ padding: "var(--gutter)" }}>
-      <h1>{profile.name}</h1>
-      <p className="eyebrow">{profile.role}</p>
-    </main>
+    <>
+      <Loader />
+      <Progress />
+      <Cursor />
+      <Header />
+      <main>
+        <Hero />
+      </main>
+    </>
   );
 }

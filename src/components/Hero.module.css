@@ -1,0 +1,158 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.copy {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.clip {
+  overflow: hidden;
+}
+
+/* rise-in: every [data-rise] starts below its clip and slides up once <html>.is-ready */
+.rise {
+  display: block;
+  transform: translateY(120%);
+  transition: transform 1.2s var(--ease-out);
+}
+
+:global(html.is-ready) .rise {
+  transform: translateY(0);
+}
+
+.kicker {
+  margin-bottom: 22px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--mute);
+  transition-duration: 1.1s;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.6rem, 8.6vw, 7.4rem);
+  line-height: 0.9;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.title .clip {
+  padding-bottom: 0.04em;
+}
+
+.lead {
+  margin: 26px 0 0;
+  max-width: 46ch;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--ink-3);
+  text-wrap: pretty;
+  transition-duration: 1.1s;
+}
+
+.lead em {
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* corners */
+.corner {
+  position: absolute;
+  bottom: clamp(18px, 3vw, 34px);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--mute);
+  pointer-events: none;
+}
+
+.left {
+  left: var(--gutter);
+}
+
+.right {
+  right: var(--gutter);
+  text-align: right;
+}
+
+.strong {
+  color: var(--ink);
+}
+
+.live {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: nk-blink 2.4s steps(1, end) infinite;
+}
+
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 2.4vw, 24px);
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute-2);
+  animation: nk-hint 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  background: linear-gradient(to top, var(--bg) 4%, rgba(21, 23, 26, 0) 100%);
+  pointer-events: none;
+}
+
+/* portrait phones: stack corners, keep the copy readable */
+@media (max-width: 640px) {
+  .hero {
+    min-height: 560px;
+  }
+  .right {
+    display: none;
+  }
+  .corner {
+    bottom: clamp(44px, 8vh, 60px);
+    font-size: 10.5px;
+  }
+  .lead {
+    max-width: 34ch;
+  }
+}

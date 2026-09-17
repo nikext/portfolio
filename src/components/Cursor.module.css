@@ -1,0 +1,19 @@
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #9aa0a6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 110;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    opacity 0.3s ease,
+    background-color 0.25s ease;
+}

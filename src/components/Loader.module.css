@@ -1,0 +1,59 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s var(--ease-io);
+}
+
+.loader.done {
+  transform: translateY(-101%);
+  pointer-events: none;
+}
+
+.greet {
+  position: relative;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.greet span {
+  position: absolute;
+  opacity: 0;
+  animation: nk-greet 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--line);
+}
+
+.fill {
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  animation: nk-load 1.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.counter {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 22px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--mute-2);
+  font-variant-numeric: tabular-nums;
+}
