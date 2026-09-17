@@ -1,0 +1,30 @@
+.band {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  width: max-content;
+  font-family: var(--mono);
+  font-size: clamp(11px, 1.5vw, 13px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--mute-2);
+  animation: nk-marquee 46s linear infinite;
+}
+
+.row.rev {
+  color: var(--mute-4);
+  animation: nk-marquee-rev 56s linear infinite;
+}
+
+.band:hover .row {
+  animation-play-state: paused;
+}

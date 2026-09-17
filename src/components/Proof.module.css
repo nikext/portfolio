@@ -1,0 +1,103 @@
+.eyebrow {
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.card {
+  border: 1px solid var(--line-2);
+  padding: clamp(20px, 2.4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out),
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--line-3);
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.small {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mute);
+  line-height: 1.7;
+}
+
+.note {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+
+.verify {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mute);
+}
+
+.langs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.langRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.langName {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.track {
+  height: 2px;
+  background: var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--accent);
+  transition: width 1.4s var(--ease-out);
+}
