@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nikext.dev — personal site
 
-## Getting Started
+Personal site of Nikola Todorovski. Next.js (static export) + three.js, deployed on Cloudflare Pages.
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static site in ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+| --- | --- |
+| Copy, links, languages, certs | `src/data/profile.ts` |
+| Roles / experience | `src/data/roles.ts` |
+| Stack chips | `src/data/stack.ts` |
+| Hero graph nodes | `src/data/nodes.ts` |
+| Colours, type, spacing tokens | `src/app/globals.css` (`--accent` drives every orange) |
+| Sections | `src/components/*` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Portrait
 
-## Learn More
+Drop a photo at `public/portrait.jpg` (4:5 works best). Until it exists the About section shows a hatched placeholder.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Cloudflare Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Connect the GitHub repo in the Cloudflare dashboard with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Setting | Value |
+| --- | --- |
+| Framework preset | Next.js (Static HTML Export) |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Node version | `22` (read from `.node-version`) |
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every push to `main` deploys; other branches get preview URLs.
